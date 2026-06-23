@@ -35,8 +35,10 @@ export const schools: School[] = [
   { id: 'mh-wanke', districtId: 'minhang', name: '万科双语学校', block: '七宝/虹桥', tier: 'strong', kind: 'private', allocation: 'lottery', warning: false, note: '民办，摇号。', confidence: 'estimate' },
 
   // ===== 青浦（民办名单经区政府招生计划核实）=====
-  { id: 'qp-shiyan', districtId: 'qingpu', name: '青浦区实验小学', block: '青浦新城', tier: 'strong', kind: 'public', allocation: 'single', warning: false, note: '区内公办头部、一梯队公办，单校对口（唯一真正买房对口项）。', confidence: 'estimate' },
-  { id: 'qp-yifu', districtId: 'qingpu', name: '逸夫小学', block: '青浦新城', tier: 'strong', kind: 'public', allocation: 'single', warning: false, note: '公办二梯队。', confidence: 'estimate' },
+  { id: 'qp-shiyan', districtId: 'qingpu', name: '青浦区实验小学', block: '盈浦(青浦老城)', tier: 'strong', kind: 'public', allocation: 'single', warning: false, note: '区内公办头部、一梯队公办，单校对口。', confidence: 'estimate' },
+  { id: 'qp-yifu', districtId: 'qingpu', name: '逸夫小学', block: '盈浦/香花桥', tier: 'strong', kind: 'public', allocation: 'single', warning: false, note: '公办二梯队。', confidence: 'estimate' },
+  { id: 'qp-shida', districtId: 'qingpu', name: '上海师范大学附属青浦实验小学', block: '徐泾/赵巷(虹桥)', tier: 'strong', kind: 'public', allocation: 'single', warning: false, note: '近虹桥次新盘对口公办，配套强。', confidence: 'estimate' },
+  { id: 'qp-yulanwan', districtId: 'qingpu', name: '御澜湾学校', block: '盈浦/夏阳', tier: 'good', kind: 'public', allocation: 'single', warning: false, note: '九年一贯公办，新城商品房板块。', confidence: 'estimate' },
   { id: 'qp-shiwai', districtId: 'qingpu', name: '青浦世界外国语学校', block: '徐泾', tier: 'top', kind: 'private', allocation: 'lottery', warning: false, note: '均瑶世外系、九年一贯，民办摇号。', confidence: 'authoritative' },
   { id: 'qp-pinghe', districtId: 'qingpu', name: '青浦平和双语学校', block: '淀山湖/新城', tier: 'top', kind: 'private', allocation: 'lottery', warning: false, note: '山峰集团办、平和集团管理，民办摇号。', confidence: 'authoritative' },
   { id: 'qp-lansheng', districtId: 'qingpu', name: '青浦兰生学校(复旦/兰生系)', block: '徐泾/新城', tier: 'top', kind: 'private', allocation: 'lottery', warning: false, note: '你说的“复旦兰生”：民办摇号、含小学段；五浦汇为其初中。', confidence: 'authoritative' },

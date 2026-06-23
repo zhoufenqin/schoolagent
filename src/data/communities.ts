@@ -57,6 +57,12 @@ export const communitySources: Source[] = [
     url: 'https://shrxbm.edu.sh.gov.cn/zszc/policy/310110/zszchtml_201601611.html',
     date: '2026-04-09',
   },
+  {
+    title: '★官方·2026青浦区小学学区划分（学校→对口居委/村→具体小区/路牌，1116条）',
+    publisher: '上海市义务教育入学报名系统',
+    url: 'https://shrxbm.edu.sh.gov.cn/zszc/policy/310118/zszchtml_201601636.html',
+    date: '2026-04-09',
+  },
 ];
 
 // 梯队约定：schoolTier top=一梯队，strong=二梯队，good=三梯队/普小。
@@ -98,9 +104,12 @@ export const communities: Community[] = [
   { id: 'mh-pingnan', districtId: 'minhang', name: '平南一~四村·华一村·华梅花苑 / 平吉一·二村·东苑半岛·蓝色港湾·新时代花园(平吉校区)', block: '梅陇/古美', school: '平南小学', schoolTier: 'strong', housingType: 'commodity', note: '平南(二梯队)对口；本部老公房、平吉校区有商品房。', confidence: 'authoritative' },
   { id: 'mh-zizhu', districtId: 'minhang', name: '紫竹半岛·吴泾英武村/幸福村/友爱村/星火村', block: '紫竹/吴泾', school: '紫竹小学(华师大系)', schoolTier: 'strong', housingType: 'newish', note: '高校系、板块新、房龄好、电梯；离市区稍远。', confidence: 'authoritative' },
 
-  // ===== 青浦（仅公办对口；民办摇号校见"好学校名录"，无对口小区）=====
-  { id: 'qp-xincheng', districtId: 'qingpu', name: '青浦新城(华新/夏阳)', block: '青浦新城', school: '青浦区实验小学(公办)', schoolTier: 'strong', housingType: 'commodity', note: '区内公办头部、唯一真正"买房对口"的选项；房龄新、单价低、性价比高；公办整体弱于市区。', confidence: 'estimate' },
-  { id: 'qp-yifu', districtId: 'qingpu', name: '青浦新城(逸夫片区)', block: '青浦新城', school: '逸夫小学(公办)', schoolTier: 'strong', housingType: 'commodity', note: '公办二梯队对口，新城板块。', confidence: 'estimate' },
+  // ===== 青浦（对口=2026官方《青浦区小学学区划分》具体小区/路牌；shrxbm官方）=====
+  { id: 'qp-shiyan', districtId: 'qingpu', name: '青淞苑·青城苑·侨鑫公寓·西园新村·庆丰新村·南沁园·汇丰豪轩等', block: '盈浦(青浦老城)', school: '青浦区实验小学', schoolTier: 'strong', housingType: 'oldPublic', note: '区内公办头部对口，多为老城新村/大楼；单价低、性价比高，公办整体弱于市区。', confidence: 'authoritative' },
+  { id: 'qp-yifu', districtId: 'qingpu', name: '万寿新村·城中城·留水园·翡翠国际花苑·盈湖三岛·富力桃园·旭辉玫瑰湾·民乐佳苑·葛洲坝玉兰花园', block: '盈浦/香花桥', school: '逸夫小学', schoolTier: 'strong', housingType: 'commodity', note: '公办二梯队对口，新村+次新商品房混合。', confidence: 'authoritative' },
+  { id: 'qp-shida', districtId: 'qingpu', name: '远洋虹桥万和源·万科一~五期·虹桥公馆·绿城春晓园·蟠龙馨苑·西郊雅苑·昱慧苑', block: '徐泾/赵巷(虹桥)', school: '上海师范大学附属青浦实验小学', schoolTier: 'strong', housingType: 'newish', note: '⭐近虹桥的次新盘对口公办；房龄好、配套强、升值优于老城。', confidence: 'authoritative' },
+  { id: 'qp-yulanwan', districtId: 'qingpu', name: '新青浦世纪苑·都市绿舟·忆华里·西部花园·御澜湾苑·金地格林郡', block: '盈浦/夏阳', school: '御澜湾学校', schoolTier: 'good', housingType: 'commodity', note: '九年一贯公办，新城商品房板块。', confidence: 'authoritative' },
+];
 ];
 
 export function communitiesOf(districtId: string): Community[] {
