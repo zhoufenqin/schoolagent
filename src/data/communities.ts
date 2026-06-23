@@ -34,7 +34,13 @@ export const communitySources: Source[] = [
     date: '2025-04-08',
   },
   {
-    title: '2026徐汇区小学招生对口地段一览',
+    title: '★官方·2026年徐汇区公办小学招生划片范围（学校→对口居委）',
+    publisher: '上海市义务教育入学报名系统',
+    url: 'https://shrxbm.edu.sh.gov.cn/zszc/policy/310104/zszchtml_201601602.html',
+    date: '2026-04-09',
+  },
+  {
+    title: '2026徐汇区小学招生对口地段一览（转引，辅助核对）',
     publisher: '上海本地宝（转引徐汇区教育局）',
     url: 'https://sh.bendibao.com/edu/202647/304993.shtm',
     date: '2026-04-07',
@@ -69,13 +75,12 @@ export const communitySources: Source[] = [
 // 本表只收录"公办、二梯队以上"的对口小区（学区房）。
 // ⚠️ 民办为电脑摇号、无对口小区，不在此表，见"好学校名录"。
 export const communities: Community[] = [
-  // ===== 杨浦 =====
-  { id: 'yp-anshan4', districtId: 'yangpu', name: '鞍山四村', block: '鞍山', school: '打虎山路第一小学', schoolTier: 'top', housingType: 'oldPublic', note: '打一对口主力，老公房、总价低、多无电梯；学区硬通货但居住老旧，适合"占学位"。', confidence: 'estimate' },
-  { id: 'yp-anshan6', districtId: 'yangpu', name: '鞍山五村/六村', block: '鞍山', school: '打虎山路第一小学', schoolTier: 'top', housingType: 'oldPublic', note: '同打一对口，老公房梯队；单价高、户型小。', confidence: 'estimate' },
-  { id: 'yp-tongjilvyuan', districtId: 'yangpu', name: '同济绿园', block: '鞍山', school: '打虎山路第一小学', schoolTier: 'top', housingType: 'newish', note: '打一对口里少见的次新带电梯——既要顶级学区又要居住的较优解，性价比相对高。', confidence: 'estimate' },
-  { id: 'yp-kongjiang', districtId: 'yangpu', name: '控江四/五/六村', block: '控江路', school: '二师附小 / 控江二村小学', schoolTier: 'top', housingType: 'oldPublic', note: '二师附小(一梯队)/控二(二梯队)对口老公房，控江板块，总价低。', confidence: 'estimate' },
-  { id: 'yp-mingxing', districtId: 'yangpu', name: '民星苑 / 凤城新村', block: '控江路', school: '控江二村小学', schoolTier: 'strong', housingType: 'commodity', note: '控二对口，部分商品房有电梯，居住性比纯老公房好。', confidence: 'estimate' },
-  { id: 'yp-guohe', districtId: 'yangpu', name: '国和一村 / 工农新村', block: '五角场/国和', school: '六一小学 / 复旦科技园小学', schoolTier: 'strong', housingType: 'oldPublic', note: '五角场二梯队对口，近大学城与商圈，资源丰富。', confidence: 'estimate' },
+  // ===== 杨浦（对口=2026官方《杨浦区一年级新生招生范围》逐路段/弄号；shrxbm官方）=====
+  { id: 'yp-dayi', districtId: 'yangpu', name: '鞍山一~七村·鞍山路·本溪路·打虎山路74-84弄/118弄·抚顺路·阜新路·胜利村·公交新村', block: '鞍山', school: '打虎山路第一小学', schoolTier: 'top', housingType: 'oldPublic', note: '⭐杨浦一梯队打一对口；核心是鞍山新村老公房，总价低、多无电梯，学区硬通货，适合占学位。', confidence: 'authoritative' },
+  { id: 'yp-ershifu', districtId: 'yangpu', name: '赤峰路·大连西路4-40弄(双)·密云路·四平路949-1147弄(单)（同济绿园等赤峰路段）', block: '四平/赤峰', school: '第二师范学校附属小学', schoolTier: 'top', housingType: 'oldPublic', note: '⭐杨浦一梯队二师附小(本部)对口路段；赤峰/四平板块，老公房为主，同济绿园等有次新。', confidence: 'authoritative' },
+  { id: 'yp-kongjiang2', districtId: 'yangpu', name: '控江二村·控江一、六村·控江路1200弄·靖宇南路/中路·沧州路160/180弄·延吉中路118/555弄', block: '控江', school: '控江二村小学', schoolTier: 'strong', housingType: 'oldPublic', note: '控二(二梯队)本部对口；控江新村老公房。⚠控江四村→黄兴学校、五村→水丰路分校、三七村→二联，购前须逐个查门牌。', confidence: 'authoritative' },
+  { id: 'yp-liuyi', districtId: 'yangpu', name: '长海路·长海四村·国和111/427/429/445弄·市光路60-88弄·翔殷路669-1059弄·营口路889弄', block: '五角场/长海', school: '六一小学', schoolTier: 'strong', housingType: 'commodity', note: '六一(二梯队)对口路段，近五角场商圈与大学城。⚠国和一村→国和小学、工农三村→工农新村小学，非六一。', confidence: 'authoritative' },
+  { id: 'yp-yangpu', districtId: 'yangpu', name: '安波路567/800/985弄（杨浦小学）·营口路883弄', block: '平凉/安波', school: '杨浦小学', schoolTier: 'strong', housingType: 'oldPublic', note: '杨浦小学(二梯队)本部对口；分校另对口平凉/眉州/黄兴路段。', confidence: 'authoritative' },
 
   // ===== 徐汇（对口=2026区教育局划片"对口居委"，居委≈小区/新村；本地宝转引官方，2026-04）=====
   { id: 'xh-gaoan-wanping', districtId: 'xuhui', name: '高安·康平·吴兴·宛平·天平·上海新村·安亭·余庆等居委', block: '天平', school: '高安路第一小学(宛平校区·本部)', schoolTier: 'top', housingType: 'oldPublic', note: '高一本部(天平板块)对口居委；老公房+老洋房、单价极高、户型杂，占学位首选。', confidence: 'authoritative' },

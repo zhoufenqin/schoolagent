@@ -46,11 +46,11 @@ export const schools: School[] = [
   { id: 'qp-xiehe', districtId: 'qingpu', name: '协和双语学校(青浦)', block: '徐泾', tier: 'strong', kind: 'private', allocation: 'lottery', warning: false, note: '民办，摇号。', confidence: 'authoritative' },
 
   // ===== 杨浦 =====
-  { id: 'yp-dayi', districtId: 'yangpu', name: '打虎山路第一小学', block: '鞉山', tier: 'top', kind: 'public', allocation: 'mixed', warning: true, note: '杨浦一梯队，对口紧张。', confidence: 'estimate' },
-  { id: 'yp-ershifu', districtId: 'yangpu', name: '第二师范学校附属小学', block: '控江', tier: 'top', kind: 'public', allocation: 'mixed', warning: true, note: '一梯队。', confidence: 'estimate' },
-  { id: 'yp-kongjiang2', districtId: 'yangpu', name: '控江二村小学(本部)', block: '控江', tier: 'strong', kind: 'public', allocation: 'mixed', warning: false, note: '二梯队。', confidence: 'estimate' },
-  { id: 'yp-yangpu', districtId: 'yangpu', name: '杨浦小学', block: '平凉/内江', tier: 'strong', kind: 'public', allocation: 'mixed', warning: false, note: '二梯队。', confidence: 'estimate' },
-  { id: 'yp-liuyi', districtId: 'yangpu', name: '六一小学', block: '五角场', tier: 'strong', kind: 'public', allocation: 'mixed', warning: false, note: '二梯队、五角场。', confidence: 'estimate' },
+  { id: 'yp-dayi', districtId: 'yangpu', name: '打虎山路第一小学', block: '鞍山', tier: 'top', kind: 'public', allocation: 'mixed', warning: true, note: '杨浦一梯队，对口紧张。', confidence: 'authoritative' },
+  { id: 'yp-ershifu', districtId: 'yangpu', name: '第二师范学校附属小学', block: '四平/赤峰', tier: 'top', kind: 'public', allocation: 'mixed', warning: true, note: '一梯队。', confidence: 'authoritative' },
+  { id: 'yp-kongjiang2', districtId: 'yangpu', name: '控江二村小学(本部)', block: '控江', tier: 'strong', kind: 'public', allocation: 'mixed', warning: false, note: '二梯队。', confidence: 'authoritative' },
+  { id: 'yp-yangpu', districtId: 'yangpu', name: '杨浦小学', block: '平凉/安波', tier: 'strong', kind: 'public', allocation: 'mixed', warning: false, note: '二梯队。', confidence: 'authoritative' },
+  { id: 'yp-liuyi', districtId: 'yangpu', name: '六一小学', block: '五角场/长海', tier: 'strong', kind: 'public', allocation: 'mixed', warning: false, note: '二梯队、五角场。', confidence: 'authoritative' },
   { id: 'yp-yangpu-min', districtId: 'yangpu', name: '阳浦小学', block: '五角场', tier: 'top', kind: 'private', allocation: 'lottery', warning: false, note: '民办头部，摇号。', confidence: 'estimate' },
 ];
 
