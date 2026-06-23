@@ -110,7 +110,6 @@ export const communities: Community[] = [
   { id: 'qp-shida', districtId: 'qingpu', name: '远洋虹桥万和源·万科一~五期·虹桥公馆·绿城春晓园·蟠龙馨苑·西郊雅苑·昱慧苑', block: '徐泾/赵巷(虹桥)', school: '上海师范大学附属青浦实验小学', schoolTier: 'strong', housingType: 'newish', note: '⭐近虹桥的次新盘对口公办；房龄好、配套强、升值优于老城。', confidence: 'authoritative' },
   { id: 'qp-yulanwan', districtId: 'qingpu', name: '新青浦世纪苑·都市绿舟·忆华里·西部花园·御澜湾苑·金地格林郡', block: '盈浦/夏阳', school: '御澜湾学校', schoolTier: 'good', housingType: 'commodity', note: '九年一贯公办，新城商品房板块。', confidence: 'authoritative' },
 ];
-];
 
 export function communitiesOf(districtId: string): Community[] {
   return communities.filter((c) => c.districtId === districtId);
