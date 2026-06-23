@@ -1,0 +1,83 @@
+var stopFlag = false; // 是否阻止默认跳转
+//监听a链接的点击
+function listenLinkClick() {
+  document.body.addEventListener("click",function (event) {
+    var target = event.target || event.srcElement;      // 兼容处理
+    if (target.nodeName.toLocaleLowerCase() === "a"|| target.parentNode.nodeName.toLocaleLowerCase() === "a") {    // 判断是否匹配目标元素
+      if (target.innerHTML === '注册' || target.innerHTML === '登录'|| target.innerHTML === '退出') return;
+      if (event.preventDefault) {     // 对捕获到的 a 标签进行处理
+        event.preventDefault();
+      } else {
+        window.event.returnValue = true;
+      }
+    }
+  }.bind(this));
+}
+
+window.onload = function() {
+  window.addEventListener('message', e => {
+    if (e.data.event === 'submit') { // 表单提交
+      if ($('#text').val() != '') {
+        $("#searchForm").submit();
+      }
+    }
+    const btn = document.getElementsByTagName('a');
+    for(var i=0;i<btn.length;i++){
+        btn[i].onclick = function(e) {
+            if (e.target.innerHTML === '登录') {
+              login();
+              return;
+            };
+			if (e.target.innerHTML === '退出') {
+              logout();
+              return;
+            };
+            if(e.target.href && e.target.innerHTML != '注册'){
+                const data = {
+                    url: e.target.href,
+                    event: 'click',
+                };
+                window.top.postMessage(data, '*')
+            }
+        }
+    }
+
+
+    const imgbtn=document.getElementsByTagName('img');
+    for(var i=0;i<imgbtn.length;i++){
+        if(imgbtn[i].parentNode.href){
+            imgbtn[i].onclick = function(e) {
+                console.log(e.target.parentNode.href)
+                const data = {
+                    url: e.target.parentNode.href,
+                    event: 'click',
+                };
+                window.top.postMessage(data, '*')
+
+            }
+        }
+    }
+
+    const ibtn=document.getElementsByTagName('i');
+    for(var i=0;i<ibtn.length;i++){
+        if(ibtn[i].parentNode.href){
+            ibtn[i].onclick = function(e) {
+                console.log(e.target.parentNode.href)
+                const data = {
+                    url: e.target.parentNode.href,
+                    event: 'click',
+                };
+                window.top.postMessage(data, '*')
+            }
+        }
+    }
+    
+    if (e.data.type) { // 初始化阻止默认事件
+      stopFlag = e.data.type;
+      listenLinkClick();
+    }
+    
+  }, false);
+
+
+}

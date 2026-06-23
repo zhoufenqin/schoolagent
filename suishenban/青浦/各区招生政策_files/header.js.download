@@ -1,0 +1,104 @@
+﻿/**搜索框**/
+$("#searchBtn").on('click',function(){
+  var text= $('#text').val();
+  if (text == "") {
+    $.messager.popup("请输入检索内容！");
+    return false;
+  }
+  if (stopFlag) { // 阻止submit请求
+    const data = {
+      event: 'submit',
+    };
+    window.top.postMessage(data, '*');
+  } else {
+    $("#searchForm").submit();
+  }
+});
+
+var info;
+$(function(){	 
+	userinfo();
+});
+
+function userinfo () {
+	var userInfo=localStorage.getItem("userInfo");
+	var html="<li class='enLink'><a href='http://english.shanghai.gov.cn/nw46669/index.html' target='_top' id='cut_kind'>EN</a></li><a target='_top' title='移动端' href='https://zwdt.sh.gov.cn/govPortals/column/download/application.html'><i class='mobile hidden-xs'></i></a>";
+	
+	if($.isEmptyObject(userInfo)&& !$.isEmptyObject(userInfoData)){
+			userInfo=userInfoData
+		}
+	if (!$.isEmptyObject(userInfo)) {
+		userInfo=decodeURIComponent(userInfo)
+		userInfo=decodeURI(userInfo);
+		var arrUserInfo=userInfo.split("@@")
+		var stName = arrUserInfo[1];
+		var fullname = stName;
+		if(typeof(stName)!='undefined' && stName.length > 3){
+			stName = stName.substring(0,2) + "...";
+		}
+		if(arrUserInfo[0]=="1"){
+				html+='<li><a target="_top" title="'+fullname+'" class="link-navbar-user" href="https://zwdtuser.sh.gov.cn/uc/naturalUser/jump.do?redirect_uri=https%3a%2f%2fzwdt.sh.gov.cn%2fsmzy%2fshspace%2floginsso%2fin%3ftargetUrl%3dsmzy1" target="_blank">'+stName+'</a><li/>';
+		}else if(arrUserInfo[0]=="2"){
+				html+='<li><a target="_top" title="'+fullname+'" class="link-navbar-user" href="https://zwdtuser.sh.gov.cn/uc/naturalUser/jump.do?redirect_uri=https%3a%2f%2fzwdt.sh.gov.cn%2fqykj%2fshspace%2floginsso%2fin%3ftargetUrl%3dqykj1" target="_blank">'+stName+'</a></li>';
+		}
+		 html+="<span class='hidden-xs'>|</span>";
+		html+='<li><a target="_top" onclick="logout()" href="javascript:void(0)">退出</a></li>';
+		  //window.clearTimeout(info);//去掉定时器
+	}else{
+		
+	    html+='<li><a target="_top" href="javascript:void(0)" onclick="login()">登录</a></li>';
+        html+="<span class='hidden-xs'>|</span>";
+        html+='<li><a target="_top" href="https://zwdtuser.sh.gov.cn/uc/register/register.html">注册</a></li>';
+		
+	}
+	$("#login").html(html);
+	initialize();
+}
+
+function getUrlParam(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+    var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+    if (r != null) return unescape(r[2]); return null; //返回参数值
+}
+function initialize() {
+	var cut_url=getUrlParam("cut_url");
+	if (cut_url!=null) {
+		$("#cut_kind").attr('href', cut_url);
+	}
+}
+
+var login = function(){
+	//window.top.location.href = 'https://zwdtuser.sh.gov.cn/uc/login/login.jsp?self=self&jump='+jump+'&redirect_uri='+linkUrl;
+	if(ly=="cs"||ly=="CS"){
+		window.top.location.href = 'https://zwdtuser.sh.gov.cn/uc/login/loginTriangle.jsp?redirect_uri='+linkUrl;
+	}else{
+		if(defaultLoginType=="jumpToLegal"){
+		window.top.location.href = 'https://zwdtuser.sh.gov.cn/uc/login/login.jsp?type=2&redirect_uri='+linkUrl;
+		}else{
+			window.top.location.href = 'https://zwdtuser.sh.gov.cn/uc/country/loginCountryEntry.do?redirect_uri='+linkUrl;
+		}
+	}
+}
+
+var logout = function(){
+	var jump_url=""
+		localStorage.removeItem("userInfo");
+	if(ly=="cs"||ly=="CS"){
+		jump_url= 'https://zwdtuser.sh.gov.cn/uc/country/cancel.do?redirect_uri=https://zwdtuser.sh.gov.cn/uc/login/loginTriangle.jsp&ly='+ly;
+	}else{
+		jump_url ='https://zwdtuser.sh.gov.cn/uc/country/cancel.do?redirect_uri='+linkUrl+'&defaultLoginType='+defaultLoginType;
+		}
+	 if (stopFlag) { // 阻止submit请求
+		    const data = {
+		      event: 'click',
+		      url:jump_url
+		    };
+		    window.top.postMessage(data, '*');
+		  } else {
+			  window.top.location.href =jump_url
+		  }
+}
+
+
+
+

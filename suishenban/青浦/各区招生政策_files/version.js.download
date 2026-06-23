@@ -1,0 +1,3 @@
+var version='1.0.0.2';
+//var applicatUrl='http://183.194.248.68:8090/uc';
+var applicatUrl='https://lxm.qrcode.sh.gov.cn/uc';
